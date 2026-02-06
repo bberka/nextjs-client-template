@@ -1,0 +1,86 @@
+{
+  "app.title": "İstemci Şablonu",
+
+  "common.loading": "Yükleniyor...",
+  "common.save": "Kaydet",
+  "common.cancel": "İptal",
+  "common.delete": "Sil",
+  "common.edit": "Düzenle",
+  "common.create": "Oluştur",
+  "common.search": "Ara...",
+  "common.confirm": "Onayla",
+  "common.back": "Geri",
+  "common.noResults": "Sonuç bulunamadı.",
+
+  "auth.login.title": "Giriş Yap",
+  "auth.login.subtitle": "Devam etmek için bilgilerinizi girin",
+  "auth.login.email": "E-posta",
+  "auth.login.password": "Şifre",
+  "auth.login.submit": "Giriş Yap",
+  "auth.login.forgotPassword": "Şifremi unuttum",
+  "auth.login.noAccount": "Hesabınız yok mu?",
+  "auth.login.register": "Hesap oluştur",
+
+  "auth.register.title": "Hesap Oluştur",
+  "auth.register.subtitle": "Başlamak için bilgilerinizi doldurun",
+  "auth.register.name": "Ad Soyad",
+  "auth.register.email": "E-posta",
+  "auth.register.password": "Şifre",
+  "auth.register.confirmPassword": "Şifre Tekrar",
+  "auth.register.submit": "Hesap Oluştur",
+  "auth.register.hasAccount": "Zaten hesabınız var mı?",
+  "auth.register.login": "Giriş yap",
+
+  "auth.forgotPassword.title": "Şifremi Unuttum",
+  "auth.forgotPassword.subtitle": "Sıfırlama kodu almak için e-postanızı girin",
+  "auth.forgotPassword.email": "E-posta",
+  "auth.forgotPassword.submit": "Sıfırlama Kodu Gönder",
+  "auth.forgotPassword.backToLogin": "Giriş sayfasına dön",
+
+  "auth.logout": "Çıkış Yap",
+
+  "nav.dashboard": "Panel",
+  "nav.profile": "Profil",
+  "nav.admin": "Yönetim",
+  "nav.users": "Kullanıcılar",
+  "nav.roles": "Roller",
+  "nav.permissions": "İzinler",
+  "nav.auditLog": "İşlem Geçmişi",
+
+  "dashboard.title": "Panel",
+  "dashboard.welcome": "Tekrar hoş geldin, {{name}}!",
+  "dashboard.totalUsers": "Toplam Kullanıcı",
+  "dashboard.activeRoles": "Aktif Roller",
+  "dashboard.recentActivity": "Son Aktiviteler",
+
+  "profile.title": "Profil",
+  "profile.subtitle": "Hesap ayarlarınızı yönetin",
+  "profile.name": "Ad Soyad",
+  "profile.email": "E-posta",
+  "profile.save": "Değişiklikleri Kaydet",
+  "profile.updated": "Profil başarıyla güncellendi",
+
+  "admin.users.title": "Kullanıcı Yönetimi",
+  "admin.users.description": "Uygulama kullanıcılarını yönetin",
+  "admin.users.create": "Kullanıcı Oluştur",
+  "admin.users.edit": "Kullanıcı Düzenle",
+  "admin.users.delete": "Kullanıcı Sil",
+  "admin.users.deleteConfirm": "Bu kullanıcıyı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+
+  "admin.roles.title": "Rol Yönetimi",
+  "admin.roles.description": "Kullanıcı rollerini ve izinlerini yönetin",
+  "admin.roles.create": "Rol Oluştur",
+  "admin.roles.edit": "Rol Düzenle",
+
+  "admin.permissions.title": "İzinler",
+  "admin.permissions.description": "Mevcut izinleri görüntüleyin",
+
+  "admin.auditLog.title": "İşlem Geçmişi",
+  "admin.auditLog.description": "Sistem aktivite günlüğünü görüntüleyin",
+
+  "otp.title": "Doğrulama Kodunu Girin",
+  "otp.subtitle": "E-postanıza 6 haneli bir kod gönderildi",
+  "otp.submit": "Doğrula",
+  "otp.resend": "Kodu Tekrar Gönder",
+  "otp.resendIn": "{{seconds}}sn sonra tekrar gönder"
+}

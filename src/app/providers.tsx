@@ -1,10 +1,48 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactNode, useState } from "react";
+import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
+import { ReactNode, useEffect, useState } from "react";
+import { initBroadcast } from "@/lib/events/broadcast";
 
 export function Providers({ children }: { children: ReactNode }) {
-  const [client] = useState(() => new QueryClient());
+  const [client] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 60 * 1000,
+            retry: 1,
+          },
+        },
+      }),
+  );
 
-  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  const [mswReady, setMswReady] = useState(false);
+
+  useEffect(() => {
+    initBroadcast();
+
+    async function init() {
+      if (process.env.NODE_ENV === "development") {
+        const { initMocks } = await import("@/lib/api/mock-adapter");
+        await initMocks();
+      }
+      setMswReady(true);
+    }
+
+    init();
+  }, []);
+
+  if (!mswReady) return null;
+
+  return (
+    <QueryClientProvider client={client}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        {children}
+        <Toaster />
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
 }

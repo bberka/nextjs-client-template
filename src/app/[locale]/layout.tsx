@@ -1,4 +1,9 @@
+import "@/app/globals.css";
+import { SUPPORTED_LOCALES } from "@/features/i18n";
 import { Providers } from "../providers";
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map((locale) => ({ locale }));
+}
 
 export default function LocaleLayout({
   children,
@@ -6,7 +11,7 @@ export default function LocaleLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html suppressHydrationWarning>
       <body>
         <Providers>{children}</Providers>
       </body>
