@@ -1,5 +1,11 @@
 export const ROUTES = {
   HOME: "/",
+  PRICING: "/pricing",
+  ANNOUNCEMENTS: "/announcements",
+  BLOG: "/blog",
+  CHANGELOGS: "/changelogs",
+  PRIVACY_POLICY: "/privacy-policy",
+  TERMS_OF_SERVICE: "/terms-of-service",
   LOGIN: "/login",
   REGISTER: "/register",
   FORGOT_PASSWORD: "/forgot-password",
