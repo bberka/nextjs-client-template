@@ -6,6 +6,13 @@ export const ROUTES = {
   CHANGELOGS: "/changelogs",
   PRIVACY_POLICY: "/privacy-policy",
   TERMS_OF_SERVICE: "/terms-of-service",
+  ROADMAP: "/roadmap",
+  FAQS: "/faqs",
+  STATUS: "/status",
+  FEATURES: "/features",
+  FEEDBACK: "/feedback",
+  CONTACT: "/contact",
+  DOCS: "/docs",
   LOGIN: "/login",
   REGISTER: "/register",
   FORGOT_PASSWORD: "/forgot-password",
@@ -20,4 +27,8 @@ export const ROUTES = {
 
 export function localizedRoute(locale: string, route: string): string {
   return `/${locale}${route}`;
+}
+
+export function blogDetailRoute(locale: string, slug: string): string {
+  return `/${locale}/blog/${slug}`;
 }

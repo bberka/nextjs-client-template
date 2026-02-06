@@ -1,6 +1,13 @@
 export { HomePage } from "./home";
 export { PricingPage } from "./pricing";
 export { AnnouncementsPage } from "./announcements";
-export { BlogPage } from "./blog";
+export { BlogPage, BLOG_POSTS, BlogDetailPage } from "./blog";
 export { ChangelogsPage } from "./changelogs";
 export { PrivacyPolicyPage, TermsOfServicePage } from "./legal";
+export { RoadmapPage } from "./roadmap";
+export { FaqsPage } from "./faqs";
+export { StatusPage } from "./status";
+export { FeaturesPage } from "./features";
+export { FeedbackPage } from "./feedback";
+export { ContactPage } from "./contact";
+export { DocsPage } from "./docs";

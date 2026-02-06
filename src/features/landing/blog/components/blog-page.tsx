@@ -2,42 +2,7 @@
 
 import { useTranslate } from "@/features/i18n";
 import { BlogPostCard } from "./blog-post-card";
-import type { BlogPost } from "../types";
-
-const BLOG_POSTS: BlogPost[] = [
-  {
-    id: "1",
-    titleKey: "landing.blog.post1.title",
-    excerptKey: "landing.blog.post1.excerpt",
-    dateKey: "landing.blog.post1.date",
-    authorKey: "landing.blog.post1.author",
-    tagKeys: ["landing.blog.post1.tag1", "landing.blog.post1.tag2"],
-  },
-  {
-    id: "2",
-    titleKey: "landing.blog.post2.title",
-    excerptKey: "landing.blog.post2.excerpt",
-    dateKey: "landing.blog.post2.date",
-    authorKey: "landing.blog.post2.author",
-    tagKeys: ["landing.blog.post2.tag1"],
-  },
-  {
-    id: "3",
-    titleKey: "landing.blog.post3.title",
-    excerptKey: "landing.blog.post3.excerpt",
-    dateKey: "landing.blog.post3.date",
-    authorKey: "landing.blog.post3.author",
-    tagKeys: ["landing.blog.post3.tag1", "landing.blog.post3.tag2"],
-  },
-  {
-    id: "4",
-    titleKey: "landing.blog.post4.title",
-    excerptKey: "landing.blog.post4.excerpt",
-    dateKey: "landing.blog.post4.date",
-    authorKey: "landing.blog.post4.author",
-    tagKeys: ["landing.blog.post4.tag1"],
-  },
-];
+import { BLOG_POSTS } from "../data";
 
 export function BlogPage() {
   const { t } = useTranslate();
