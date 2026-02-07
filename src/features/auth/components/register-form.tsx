@@ -3,6 +3,7 @@
 import { FormField } from "@/components/shared/form-field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import { ROUTES } from "@/constants/routes";
 import { useLocalizedRoute, useTranslate } from "@/features/i18n";
 import { SeverityLevel } from "@/types/api";
@@ -13,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useRegister } from "../hooks/use-register";
 import { registerSchema } from "../schemas";
+import { OAuthButtons } from "./oauth-buttons";
 
 type RegisterFormData = z.infer<typeof registerSchema>;
 
@@ -47,6 +49,20 @@ export function RegisterForm() {
           {t("auth.register.subtitle")}
         </p>
       </div>
+
+      <OAuthButtons disabled={registerMutation.isPending} />
+
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <Separator className="w-full" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-background px-2 text-muted-foreground">
+            {t("auth.register.orContinueWith")}
+          </span>
+        </div>
+      </div>
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           label={t("auth.register.name")}

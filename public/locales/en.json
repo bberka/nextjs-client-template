@@ -32,6 +32,7 @@
   "auth.register.submit": "Create Account",
   "auth.register.hasAccount": "Already have an account?",
   "auth.register.login": "Sign in",
+  "auth.register.orContinueWith": "Or continue with",
 
   "auth.forgotPassword.title": "Forgot Password",
   "auth.forgotPassword.subtitle": "Enter your email to receive a reset code",
