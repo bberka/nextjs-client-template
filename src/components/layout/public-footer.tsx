@@ -34,68 +34,70 @@ export function PublicFooter() {
 
   return (
     <footer className="border-t bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 py-12 md:px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-3">
+      <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
+        <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+          <div className="space-y-3 md:col-span-2 lg:col-span-1">
             <h3 className="text-lg font-semibold">{t("app.title")}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
               {t("publicFooter.description")}
             </p>
           </div>
 
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              {t("publicFooter.product")}
-            </h4>
-            <nav className="flex flex-col gap-2">
-              {productLinks.map((link) => (
-                <Link
-                  key={link.route}
-                  href={lr(link.route)}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {t(link.labelKey)}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-2 lg:col-span-3 lg:grid-cols-3">
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                {t("publicFooter.product")}
+              </h4>
+              <nav className="flex flex-col gap-2">
+                {productLinks.map((link) => (
+                  <Link
+                    key={link.route}
+                    href={lr(link.route)}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground w-fit"
+                  >
+                    {t(link.labelKey)}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              {t("publicFooter.support")}
-            </h4>
-            <nav className="flex flex-col gap-2">
-              {supportLinks.map((link) => (
-                <Link
-                  key={link.route}
-                  href={lr(link.route)}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {t(link.labelKey)}
-                </Link>
-              ))}
-            </nav>
-          </div>
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                {t("publicFooter.support")}
+              </h4>
+              <nav className="flex flex-col gap-2">
+                {supportLinks.map((link) => (
+                  <Link
+                    key={link.route}
+                    href={lr(link.route)}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground w-fit"
+                  >
+                    {t(link.labelKey)}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              {t("publicFooter.legal")}
-            </h4>
-            <nav className="flex flex-col gap-2">
-              {legalLinks.map((link) => (
-                <Link
-                  key={link.route}
-                  href={lr(link.route)}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {t(link.labelKey)}
-                </Link>
-              ))}
-            </nav>
+            <div className="col-span-2 sm:col-span-1 space-y-3">
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                {t("publicFooter.legal")}
+              </h4>
+              <nav className="flex flex-row gap-4 sm:flex-col sm:gap-2">
+                {legalLinks.map((link) => (
+                  <Link
+                    key={link.route}
+                    href={lr(link.route)}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground w-fit"
+                  >
+                    {t(link.labelKey)}
+                  </Link>
+                ))}
+              </nav>
+            </div>
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-6 md:my-8" />
 
         <div className="text-center text-sm text-muted-foreground">
           {t("publicFooter.copyright")}
