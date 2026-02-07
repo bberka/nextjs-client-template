@@ -1,15 +1,16 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import Link from "next/link";
-import { forgotPasswordSchema } from "../schemas";
-import { useForgotPassword } from "../hooks/use-forgot-password";
-import { useTranslate, useLocalizedRoute } from "@/features/i18n";
-import { ROUTES } from "@/constants/routes";
-import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/shared/form-field";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ROUTES } from "@/constants/routes";
+import { useLocalizedRoute, useTranslate } from "@/features/i18n";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { useForgotPassword } from "../hooks/use-forgot-password";
+import { forgotPasswordSchema } from "../schemas";
 
 type ForgotPasswordFormData = z.infer<typeof forgotPasswordSchema>;
 
@@ -38,7 +39,7 @@ export function ForgotPasswordForm() {
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <FormField label={t("auth.forgotPassword.email")} htmlFor="email" error={errors.email?.message}>
-          <input
+          <Input
             id="email"
             type="email"
             autoComplete="email"

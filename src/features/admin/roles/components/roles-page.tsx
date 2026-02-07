@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { useRolesList } from "../hooks/use-roles-list";
-import { useCreateRole } from "../hooks/use-create-role";
-import { useUpdateRole } from "../hooks/use-update-role";
-import { useTranslate } from "@/features/i18n";
-import { PageHeader } from "@/components/shared/page-header";
 import { DataTable } from "@/components/data-table/data-table";
+import type { ColumnDef } from "@/components/data-table/types";
+import { FormField } from "@/components/shared/form-field";
+import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,10 +12,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { FormField } from "@/components/shared/form-field";
-import { Plus, Pencil } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { useTranslate } from "@/features/i18n";
 import { SeverityLevel } from "@/types/api";
-import type { ColumnDef } from "@/components/data-table/types";
+import { Pencil, Plus } from "lucide-react";
+import { useState } from "react";
+import { useCreateRole } from "../hooks/use-create-role";
+import { useRolesList } from "../hooks/use-roles-list";
+import { useUpdateRole } from "../hooks/use-update-role";
 import type { Role } from "../types";
 
 export function RolesPage() {
@@ -98,7 +99,7 @@ export function RolesPage() {
             <DialogTitle>{editRole ? t("admin.roles.edit") : t("admin.roles.create")}</DialogTitle>
           </DialogHeader>
           <FormField label="Role Name" htmlFor="roleName">
-            <input
+            <Input
               id="roleName"
               type="text"
               value={name}

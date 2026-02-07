@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, type KeyboardEvent, type ClipboardEvent } from "react";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { useRef, type ClipboardEvent, type KeyboardEvent } from "react";
 
 interface OtpInputProps {
   length?: number;
@@ -42,7 +43,7 @@ export function OtpInput({ length = 6, value, onChange, disabled }: OtpInputProp
   return (
     <div className="flex gap-2 justify-center">
       {digits.map((digit, i) => (
-        <input
+        <Input
           key={i}
           ref={(el) => { inputsRef.current[i] = el; }}
           type="text"

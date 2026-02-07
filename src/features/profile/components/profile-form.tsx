@@ -1,14 +1,15 @@
 "use client";
 
+import { FormField } from "@/components/shared/form-field";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useTranslate } from "@/features/i18n";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { updateProfileSchema } from "../schemas";
 import { useUpdateProfile } from "../hooks/use-update-profile";
-import { useTranslate } from "@/features/i18n";
-import { Button } from "@/components/ui/button";
-import { FormField } from "@/components/shared/form-field";
+import { updateProfileSchema } from "../schemas";
 import type { UserProfile } from "../types";
 
 type ProfileFormData = z.infer<typeof updateProfileSchema>;
@@ -42,7 +43,7 @@ export function ProfileForm({ profile }: ProfileFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-4">
       <FormField label={t("profile.name")} htmlFor="name" error={errors.name?.message}>
-        <input
+        <Input
           id="name"
           type="text"
           className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -50,7 +51,7 @@ export function ProfileForm({ profile }: ProfileFormProps) {
         />
       </FormField>
       <FormField label={t("profile.email")} htmlFor="email" error={errors.email?.message}>
-        <input
+        <Input
           id="email"
           type="email"
           className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"

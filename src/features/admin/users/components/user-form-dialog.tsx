@@ -1,14 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { createUserSchema, updateUserSchema } from "../schemas";
-import { useCreateUser } from "../hooks/use-create-user";
-import { useUpdateUser } from "../hooks/use-update-user";
-import { useTranslate } from "@/features/i18n";
-import { SeverityLevel } from "@/types/api";
+import { FormField } from "@/components/shared/form-field";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -16,8 +9,16 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { FormField } from "@/components/shared/form-field";
+import { Input } from "@/components/ui/input";
+import { useTranslate } from "@/features/i18n";
+import { SeverityLevel } from "@/types/api";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { useCreateUser } from "../hooks/use-create-user";
+import { useUpdateUser } from "../hooks/use-update-user";
+import { createUserSchema, updateUserSchema } from "../schemas";
 import type { AdminUser } from "../types";
 
 type CreateFormData = z.infer<typeof createUserSchema>;
@@ -79,7 +80,7 @@ export function UserFormDialog({ open, onOpenChange, user }: UserFormDialogProps
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <FormField label={t("auth.register.name")} htmlFor="name" error={errors.name?.message}>
-            <input
+            <Input
               id="name"
               type="text"
               className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -87,7 +88,7 @@ export function UserFormDialog({ open, onOpenChange, user }: UserFormDialogProps
             />
           </FormField>
           <FormField label={t("auth.register.email")} htmlFor="email" error={errors.email?.message}>
-            <input
+            <Input
               id="email"
               type="email"
               className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -96,7 +97,7 @@ export function UserFormDialog({ open, onOpenChange, user }: UserFormDialogProps
           </FormField>
           {!isEdit && (
             <FormField label={t("auth.register.password")} htmlFor="password" error={(errors as Record<string, { message?: string }>).password?.message}>
-              <input
+              <Input
                 id="password"
                 type="password"
                 className="flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"

@@ -1,17 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { useUsersList } from "../hooks/use-users-list";
-import { useDeleteUser } from "../hooks/use-delete-user";
-import { UsersTable } from "./users-table";
-import { UserFormDialog } from "./user-form-dialog";
-import { useTranslate } from "@/features/i18n";
-import { PageHeader } from "@/components/shared/page-header";
 import { ConfirmDialog } from "@/components/shared/confirm-dialog";
+import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { useTranslate } from "@/features/i18n";
 import { SeverityLevel } from "@/types/api";
+import { Plus } from "lucide-react";
+import { useState } from "react";
+import { useDeleteUser } from "../hooks/use-delete-user";
+import { useUsersList } from "../hooks/use-users-list";
 import type { AdminUser } from "../types";
+import { UserFormDialog } from "./user-form-dialog";
+import { UsersTable } from "./users-table";
 
 export function UsersPage() {
   const { t } = useTranslate();
@@ -56,7 +57,7 @@ export function UsersPage() {
         }
       />
       <div className="max-w-xs">
-        <input
+        <Input
           type="text"
           placeholder={t("common.search")}
           value={search}
