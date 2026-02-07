@@ -25,7 +25,7 @@ export function Providers({ children }: { children: ReactNode }) {
     initBroadcast();
 
     async function init() {
-      if (process.env.NODE_ENV === "development") {
+      if (process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_ENABLE_MSW === "true") {
         const { initMocks } = await import("@/lib/api/mock-adapter");
         await initMocks();
       }
