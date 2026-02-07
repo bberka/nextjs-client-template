@@ -6,3 +6,4 @@ export { LocaleSwitcher } from "./components/locale-switcher";
 export { I18N_EVENTS } from "./events";
 export { SUPPORTED_LOCALES, DEFAULT_LOCALE } from "./types";
 export type { Locale } from "./types";
+export type { LocaleKey } from "./locale-keys.gen";

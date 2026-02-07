@@ -5,6 +5,7 @@ import { useLocale } from "./use-locale";
 import { loadTranslations } from "@/lib/i18n-core/loader";
 import { interpolate } from "@/lib/i18n-core/parser";
 import { useCallback } from "react";
+import type { LocaleKey } from "../locale-keys.gen";
 
 export function useTranslate() {
   const { locale } = useLocale();
@@ -16,7 +17,7 @@ export function useTranslate() {
   });
 
   const t = useCallback(
-    (key: string, args?: Record<string, string | number | boolean>): string => {
+    (key: LocaleKey | (string & {}), args?: Record<string, string | number | boolean>): string => {
       const template = translations?.[key] ?? key;
       return interpolate(template, args);
     },
