@@ -20,6 +20,8 @@
   "auth.login.forgotPassword": "Şifremi unuttum",
   "auth.login.noAccount": "Hesabınız yok mu?",
   "auth.login.register": "Hesap oluştur",
+  "auth.login.orContinueWith": "Veya şununla devam edin",
+  "auth.login.demoAccounts": "Demo Hesaplar",
 
   "auth.register.title": "Hesap Oluştur",
   "auth.register.subtitle": "Başlamak için bilgilerinizi doldurun",

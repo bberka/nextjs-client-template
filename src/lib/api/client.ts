@@ -27,7 +27,7 @@ function buildUrl(
 
 function getAuthHeaders(): Record<string, string> {
   if (typeof window === "undefined") return {};
-  const token = sessionStorage.getItem("auth_token");
+  const token = localStorage.getItem("auth_token");
   if (!token) return {};
   return { Authorization: `Bearer ${token}` };
 }

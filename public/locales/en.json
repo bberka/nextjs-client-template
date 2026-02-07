@@ -20,6 +20,8 @@
   "auth.login.forgotPassword": "Forgot password?",
   "auth.login.noAccount": "Don't have an account?",
   "auth.login.register": "Create account",
+  "auth.login.orContinueWith": "Or continue with",
+  "auth.login.demoAccounts": "Demo Accounts",
 
   "auth.register.title": "Create Account",
   "auth.register.subtitle": "Fill in your details to get started",
