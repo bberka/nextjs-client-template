@@ -5,11 +5,15 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/constants/routes";
-import { useLocalizedRoute, useTranslate, useLocale } from "@/features/i18n";
+import {
+  useLocalizedRoute,
+  useTranslate,
+  LocaleSwitcher,
+} from "@/features/i18n";
 import { useAuthStore } from "@/features/auth";
 import { useThemeSync } from "@/features/theme";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Globe, Menu, X, ChevronDown } from "lucide-react";
+import { Moon, Sun, Menu, X, ChevronDown } from "lucide-react";
 
 interface NavLink {
   labelKey: string;
@@ -106,7 +110,6 @@ export function PublicNavbar() {
   const pathname = usePathname();
   const { t } = useTranslate();
   const { lr } = useLocalizedRoute();
-  const { locale, setLocale, supportedLocales } = useLocale();
   const { resolvedTheme, setTheme } = useThemeSync();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -180,21 +183,7 @@ export function PublicNavbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            onClick={() => {
-              const next =
-                supportedLocales[
-                  (supportedLocales.indexOf(locale) + 1) %
-                    supportedLocales.length
-                ];
-              setLocale(next);
-            }}
-            title="Switch language"
-          >
-            <Globe className="size-4" />
-          </Button>
+          <LocaleSwitcher />
           <Button
             variant="ghost"
             size="icon-sm"
@@ -267,20 +256,7 @@ export function PublicNavbar() {
             ))}
           </nav>
           <div className="mt-3 flex items-center gap-2 border-t pt-3">
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              onClick={() => {
-                const next =
-                  supportedLocales[
-                    (supportedLocales.indexOf(locale) + 1) %
-                      supportedLocales.length
-                  ];
-                setLocale(next);
-              }}
-            >
-              <Globe className="size-4" />
-            </Button>
+            <LocaleSwitcher />
             <Button
               variant="ghost"
               size="icon-sm"

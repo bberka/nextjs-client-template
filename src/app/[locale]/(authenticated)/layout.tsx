@@ -1,11 +1,11 @@
 "use client";
 
 import { AuthGuard, useAuthStore, UserMenu, UserRole } from "@/features/auth";
-import { useLocale } from "@/features/i18n";
+import { useLocale, LocaleSwitcher } from "@/features/i18n";
 import { AppLayout } from "@/components/layout/app-layout";
 import { useThemeSync } from "@/features/theme";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Globe } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 export default function AuthenticatedLayout({
   children,
@@ -13,7 +13,7 @@ export default function AuthenticatedLayout({
   children: React.ReactNode;
 }) {
   const user = useAuthStore((s) => s.user);
-  const { locale, setLocale, supportedLocales } = useLocale();
+  const { locale } = useLocale();
   const { resolvedTheme, setTheme } = useThemeSync();
 
   return (
@@ -23,17 +23,7 @@ export default function AuthenticatedLayout({
         isAdmin={user?.role === UserRole.Admin}
         headerContent={
           <div className="flex flex-1 items-center justify-end gap-2">
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              onClick={() => {
-                const next = supportedLocales[(supportedLocales.indexOf(locale) + 1) % supportedLocales.length];
-                setLocale(next);
-              }}
-              title="Switch language"
-            >
-              <Globe className="size-4" />
-            </Button>
+            <LocaleSwitcher />
             <Button
               variant="ghost"
               size="icon-sm"
