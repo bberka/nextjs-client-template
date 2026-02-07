@@ -11,6 +11,7 @@ import {
   KeyRound,
   ScrollText,
   User,
+  Home,
 } from "lucide-react";
 
 export interface NavItem {
@@ -21,6 +22,7 @@ export interface NavItem {
 
 export function getMainNav(locale: string): NavItem[] {
   return [
+    { label: "Home", href: localizedRoute(locale, ROUTES.HOME), icon: <Home className="size-4" /> },
     { label: "Dashboard", href: localizedRoute(locale, ROUTES.DASHBOARD), icon: <LayoutDashboard className="size-4" /> },
     { label: "Profile", href: localizedRoute(locale, ROUTES.PROFILE), icon: <User className="size-4" /> },
   ];
